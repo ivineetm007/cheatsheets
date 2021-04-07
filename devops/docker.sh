@@ -14,7 +14,7 @@ docker image pull                    #Push an image
 docker image push                    #Pull an dockerfile
 docker image rm <name>               #Remove image
 
-docker run <image name>              #Run container	 -d for background, -p <port in laptop>:<port in container>, -it interactive and ---name <name>
+docker run <image name>              #Run container	 -d for background, -p <port in laptop>:<port in container>, -it interactive and ---name <name>. -w working directory
 						             # Exit to come out of interactive mode It will kill container. Press Ctrl + P + Q to avoid that
 #Container
 docker container rm <name>           #Remove container
