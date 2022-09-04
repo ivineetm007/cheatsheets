@@ -1,6 +1,6 @@
 **Pytorch Version: 1.21.1**
 # Tensors
-### Create a random tensor
+## Create a random tensor
 ```
 # Create a random tensor of shape (1,5)
 random_tensor1 = torch.randn((1, 5))
@@ -10,8 +10,8 @@ random_tensor1 = torch.randn((1, 5))
 random_tensor2 = torch.randn_like(random_tensor1)
 ## Shape - (1,5)
 ``` 
-### Basic operations
-#### Sum
+## Basic operations
+### Sum
 ``` 
 tensor1 = torch.rand((3,5))
 # Sum of all elements
@@ -23,7 +23,7 @@ torch.sum(t, dim=1) # dim could be a list ex dim = [0,1]
 ## Output- tensor([2.1360, 2.7987, 2.6110])
 ``` 
 
-#### Matrix Multiplication
+### Matrix Multiplication
 ``` 
 # Vector x Vector- If both tensors are 1-dimensional, the dot product (scalar) is returned.
 tensor1 = torch.randn(3)
@@ -55,7 +55,30 @@ tensor2 = torch.randn(10, 4, 5)
 torch.matmul(tensor1, tensor2).size()
 ## Output- torch.Size([9, 10, 3, 5])
 ``` 
+### Change Shape
+#### View
+Returns a new tensor with the same data as the self tensor but of a different shape.
+```
+tensor1 = torch.tensor([[1,2,3],[4,5,6]])
+print(tensor1)
+## Output- tensor([[1, 2, 3],[4, 5, 6]])
+print(tensor1.shape)
+## Output- torch.Size([2, 3])
 
+# Transpose
+tensor2 = tensor1.transpose(0, 1)
+print(tensor2)
+## Output- tensor([[1, 4],[2, 5],[3, 6]])
+print(tensor2.shape)
+## Output- torch.Size([3, 2])
+
+# View- Does not change tensor layout in memory
+tensor3 = tensor1.view(3,2)
+print(tensor3)
+## Output- tensor([[1, 2],[3, 4],[5, 6]])
+print(tensor3.shape)
+## Output- torch.Size([3, 2])
+```
 # Deep Learning
 
 ## Loss functions
