@@ -1,18 +1,89 @@
-----------------
+#####################
+#####################
 git
-----------------
+#####################
+#####################
+
+-----------------------
+Basics
+-----------------------
+# Get the saved username/email
+git config user.name
+git config user.email
+
+git status
+# Add 
+git add .
+
+# Commit
+git commit -m "Commit message"
+
+# Push
+git push -u <url> <branch_name>
+git push -u origin master
+
+# Git remote add
+git remote add origin remote_repository_SSH_URL
+git remote -V
+
+
+------------------
+Merge, Pull Fetch
+------------------
+git fetch <remote>
+git merge <remote>/<branch>
+# Single command for above two
+git pull
+
+-----------------------
+Branch
+-----------------------
+# List of branches
+git branch
+
+# Create new branch
+git branch <name>
+
+# Switch to another branch
+git checkout <name>
+
+# Single command for above two
+git checkout -b <name>
+
+# Delete branch locally
+git branch -d <local_branch_name>
+
+# Delete branch remotely
+git push origin --delete <remote_branch_name>
+
+# Create local branch from existing remote branch
+git checkout --track <origin>/<branch>
+
+# Set upstream branch
+git branch --set-upstream-to <origin>/<branch>
+
+# PUll changes from parent branch
+git merge <child branch> <parent branch>
+
+
+-----------------------
+Revert, Log
+-----------------------
+# Undo last commit
+git reset --soft HEAD~1
 
 
 
-
-
-
-
-----
+#####################
+#####################
 Github
-----
-#NEW REPO SETUP
-#create a new repository on the command line
+#####################
+#####################
+
+-----------------------
+NEW REPO SETUP
+-----------------------
+# Create a new repository on the command line
 echo "# coursera-nlp-specialization-deeplearning.ai" >> README.md
 git init
 git add README.md
